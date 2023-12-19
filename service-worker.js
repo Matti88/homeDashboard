@@ -1,4 +1,4 @@
-const CACHE_NAME = 'weather-app-v2';
+const CACHE_NAME = 'weather-app-v3';
 const urlsToCache = [
   '/homeDashboard/',
   '/homeDashboard/index.html',
