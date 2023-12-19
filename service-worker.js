@@ -1,15 +1,15 @@
 const CACHE_NAME = 'weather-app-v2';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/offline.html',
-  '/weather.js',
-  '/clock.js',
-  '/tranSchedule.js',
-  '/manifest.json',
-  '/images/icon-192x192.png',
-  '/images/icon-512x512.png',
-  '/favicon.ico'
+  '',
+  'index.html',
+  'offline.html',
+  'weather.js',
+  'clock.js',
+  'tranSchedule.js',
+  'manifest.json',
+  'images/icon-192x192.png',
+  'images/icon-512x512.png',
+  'favicon.ico'
 ];
 
 self.addEventListener('install', event => {
