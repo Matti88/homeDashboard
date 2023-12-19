@@ -1,6 +1,6 @@
 {
-    "short_name": "WeatherApp",
-    "name": "Weather Forecast Application",
+    "short_name": "City Dashboard",
+    "name": "City Dashboard",
     "icons": [
       {
         "src": "/images/icon-192x192.png",
