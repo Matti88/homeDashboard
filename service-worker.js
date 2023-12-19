@@ -21,13 +21,16 @@ self.addEventListener('install', event => {
   );
 });
 
+self.addEventListener('install', event => {
+  event.waitUntil(
+      caches.open(CACHE_NAME)
+          .then(cache => cache.addAll(STATIC_ASSETS))
+  );
+});
 
 self.addEventListener('fetch', event => {
   const req = event.request;
   const url = new URL(req.url);
-
-  console.log(url);
-  
 
   if (url.origin === location.origin) {
       event.respondWith(cacheFirst(req));
@@ -39,4 +42,15 @@ self.addEventListener('fetch', event => {
 async function cacheFirst(req) {
   const cachedResponse = await caches.match(req);
   return cachedResponse || fetch(req);
+}
+
+async function networkFirst(req) {
+  try {
+      const networkResponse = await fetch(req);
+      return networkResponse;
+  } catch (error) {
+      console.log('Fetch failed; returning offline page instead.', error);
+      const cachedResponse = await caches.match(req);
+      return cachedResponse || caches.match('/offline.html');
+  }
 }
