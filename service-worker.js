@@ -5,7 +5,7 @@ const urlsToCache = [
   '/homeDashboard/offline.html',
   '/homeDashboard/weather.js',
   '/homeDashboard/clock.js',
-  '/homeDashboard/tranSchedule.js',
+  '/homeDashboard/tramSchedule.js',
   '/homeDashboard/manifest.json',
   '/homeDashboard/images/icon-192x192.png',
   '/homeDashboard/images/icon-512x512.png',
