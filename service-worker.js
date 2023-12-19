@@ -1,6 +1,6 @@
 const CACHE_NAME = 'weather-app-v3';
 const urlsToCache = [
-  '/homeDashboard/',
+  '/',
   '/homeDashboard/index.html',
   '/homeDashboard/offline.html',
   '/homeDashboard/weather.js',
@@ -51,6 +51,6 @@ async function networkFirst(req) {
   } catch (error) {
       console.log('Fetch failed; returning offline page instead.', error);
       const cachedResponse = await caches.match(req);
-      return cachedResponse || caches.match('/offline.html');
+      return cachedResponse || caches.match('offline.html');
   }
 }
