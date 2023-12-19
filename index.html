@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="manifest" href="/homeDashboard/manifest.json">
+    <link rel="manifest" href="/manifest.json">
     <title>City Dashboard</title>
     <style>
         body {
@@ -57,7 +57,7 @@
     <script>
         if ('serviceWorker' in navigator) {
           window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/homeDashboard/service-worker.js')
+            navigator.serviceWorker.register('/service-worker.js')
               .then(registration => {
                 console.log('ServiceWorker registration successful with scope: ', registration.scope);
               })
@@ -72,19 +72,19 @@
     <div class="container">
         <h1>Clock Live</h1>
         <div id="clock">01:38:56</div>
-        <script src="clock.js"></script>
+        <script src="/clock.js"></script>
     </div>
     <div class="container">
         <h1>Next Tram Departure from Hlawkagasse</h1>
         <div id="nextTramTime">Next departures: 05:03, 05:10, 05:17, 05:24</div>
-        <script src="tramSchedule.js"></script>
+        <script src="/tramSchedule.js"></script>
     </div>
     <div class="container">
         <h1>Weather Forecast</h1>
         <div id="weatherContainer">
             <!-- Weather Table Here -->
         </div>
-        <script src="weather.js"></script>
+        <script src="/weather.js"></script>
     </div>
 
 </body>
