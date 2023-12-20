@@ -1,6 +1,6 @@
 const CACHE_NAME = 'weather-app-v3';
 const urlsToCache = [
-  '/',
+  '',
   'index.html',
   'offline.html',
   'weather.js',
