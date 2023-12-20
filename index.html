@@ -1,7 +1,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="manifest" href="/homeDashboard/manifest.json">
+    <base href="https://matti88.github.io/homeDashboard/">  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="/manifest.json">
     <title>City Dashboard</title>
     <style>
         body {
@@ -57,7 +58,7 @@
     <script>
         if ('serviceWorker' in navigator) {
           window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/homeDashboard/service-worker.js')
+            navigator.serviceWorker.register('/service-worker.js')
               .then(registration => {
                 console.log('ServiceWorker registration successful with scope: ', registration.scope);
               })

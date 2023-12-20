@@ -1,15 +1,15 @@
 const CACHE_NAME = 'weather-app-v3';
 const urlsToCache = [
   '/',
-  '/homeDashboard/index.html',
-  '/homeDashboard/offline.html',
-  '/homeDashboard/weather.js',
-  '/homeDashboard/clock.js',
-  '/homeDashboard/tramSchedule.js',
-  '/homeDashboard/manifest.json',
-  '/homeDashboard/images/icon-192x192.png',
-  '/homeDashboard/images/icon-512x512.png',
-  '/homeDashboard/favicon.ico'
+  '/index.html',
+  '/offline.html',
+  '/weather.js',
+  '/clock.js',
+  '/tramSchedule.js',
+  '/manifest.json',
+  '/images/icon-192x192.png',
+  '/images/icon-512x512.png',
+  '/favicon.ico'
 ];
 
 self.addEventListener('install', event => {
@@ -21,12 +21,7 @@ self.addEventListener('install', event => {
   );
 });
 
-self.addEventListener('install', event => {
-  event.waitUntil(
-      caches.open(CACHE_NAME)
-          .then(cache => cache.addAll(STATIC_ASSETS))
-  );
-});
+
 
 self.addEventListener('fetch', event => {
   const req = event.request;
