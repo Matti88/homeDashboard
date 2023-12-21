@@ -6,8 +6,15 @@ async function fetchDepartureData() {
  
 
     try {
-        const response = await fetch("https://thingproxy.freeboard.io/fetch/https://www.wienerlinien.at/ogd_realtime/monitor?activateTrafficInfo=stoerunglang&rbl=3439");
 
+        const wienerLinenen = "https://www.wienerlinien.at/ogd_realtime/monitor?activateTrafficInfo=stoerunglang&rbl=3439";
+        fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(wienerLinenen)}`)
+        .then(response => {
+          if (response.ok) return response.json()
+          throw new Error('Network response was not ok.')
+        })
+        .then(data => console.log(data.contents));
+      
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
