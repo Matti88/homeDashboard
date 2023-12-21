@@ -1,15 +1,7 @@
 // Fetches departure data from the API
 async function fetchDepartureData() {
-    fetch("https://www.wienerlinien.at/ogd_realtime/monitor?activateTrafficInfo=stoerunglang&rbl=3439", {
-        headers: {
-          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36",
-          // Include other necessary headers here
-        }
-      })
-      .then(response => response.json())
-      .then(data => console.log(data))
-      .catch(error => console.error('Error:', error));
-      
+    const url = 'https://www.wienerlinien.at/ogd_realtime/monitor?activateTrafficInfo=stoerunglang&rbl=3439';
+    const response = await fetch(url);
     if (!response.ok) {
         throw new Error('Network response was not ok');
     }
@@ -43,5 +35,5 @@ function updateDisplay() {
 }
 
 // Initialize the update process
-setInterval(updateDisplay, 600000);
+setInterval(updateDisplay, 60000);
 updateDisplay();
