@@ -8,9 +8,11 @@ async function fetchDepartureData() {
     try {
 
         const wienerLinenen = "https://www.wienerlinien.at/ogd_realtime/monitor?activateTrafficInfo=stoerunglang&rbl=3439";
+       
         fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(wienerLinenen)}`)
         .then(response => {
-          if (response.ok) return response.json()
+
+        if (response.ok) return JSON.parse(response.json().contents)
           throw new Error('Network response was not ok.')
         })
         .then(data => console.log(data.contents));
@@ -18,7 +20,7 @@ async function fetchDepartureData() {
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        latestData = await response.json(); // Update the stored data
+        latestData = await JSON.parse(response.json().contents); // Update the stored data
     } catch (error) {
         console.error('Failed to fetch departure data:', error);
     }
