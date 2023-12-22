@@ -5,8 +5,15 @@ async function fetchDepartureData() {
     try {
         const wienerLinien = "https://www.wienerlinien.at/ogd_realtime/monitor?activateTrafficInfo=stoerunglang&rbl=3439";
         const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(wienerLinien)}`);
-        const data_ = await response.json();
-        latestData = JSON.parse(data_.contents); // Ensuring this line is within the try block
+
+        if (!response.ok) {
+            throw new Error('Network response was not ok.');
+        }
+
+        const data = await response.json();
+
+        latestData = JSON.parse(data.contents); // Ensuring this line is within the try block
+        console.log(latestData);
 
     } catch (error) {
         console.error('Failed to fetch departure data:', error);
@@ -51,5 +58,5 @@ setInterval(fetchDepartureData, 3600000); // 3600000 milliseconds = 1 hour
 fetchDepartureData(); // Initial fetch
 
 // Update display every 2 minutes
-setInterval(updateDisplay, 120000); // 120000 milliseconds = 2 minutes
+setInterval(updateDisplay, 1200); // it takes a while and this first update should work more often
 updateDisplay(); // Initial display update
