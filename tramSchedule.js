@@ -54,7 +54,7 @@ function updateDisplay() {
 
 
 // Fetch data every hour
-setInterval(fetchDepartureData, 3600000); // 3600000 milliseconds = 1 hour
+setInterval(fetchDepartureData, 1800000); // 1800000 milliseconds = 1/2 hour
 fetchDepartureData(); // Initial fetch
 
 // Update display every 2 minutes
