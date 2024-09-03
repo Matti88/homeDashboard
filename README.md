@@ -4,7 +4,7 @@ Certainly! Here's an updated version of your README file, including an example s
 
 # 🌅 Morning Update App
 
-[![PWA Badge](https://img.shields.io/badge/PWA-Progressive%20Web%20App-blueviolet?style=flat-square)](https://matti88.github.io/homeDashboard/)
+[![PWA Badge](https://img.shields.io/badge/PWA-Progressive%20Web%20App-blueviolet?style=flat-square)](https://matti88.github.io/morningUpdateApp/)
 
 Welcome to the **Morning Update App**! 🌤️ This simple yet elegant Progressive Web App (PWA) is crafted to provide all the essential information I need to start my day right.
 
@@ -34,7 +34,7 @@ Here’s a snapshot of how the app looks:
 
 ## 🏗️ Installation
 
-As a PWA, this app is easily installable on your mobile device or desktop. Simply visit the app's GitHub Pages site [here](https://matti88.github.io/homeDashboard/) and add it to your home screen for quick access every morning.
+As a PWA, this app is easily installable on your mobile device or desktop. Simply visit the app's GitHub Pages site [here](https://matti88.github.io/morningUpdateApp/) and add it to your home screen for quick access every morning.
 
 1. **Open the app** in your mobile browser.
 2. **Tap the "Add to Home Screen"** prompt to install the app.
