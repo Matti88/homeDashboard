@@ -1,7 +1,3 @@
-Certainly! Here's an updated version of your README file, including an example section with an image to illustrate how the app looks:
-
----
-
 # 🌅 Morning Update App
 
 [![PWA Badge](https://img.shields.io/badge/PWA-Progressive%20Web%20App-blueviolet?style=flat-square)](https://matti88.github.io/morningUpdateApp/)
@@ -54,6 +50,3 @@ This project is licensed under the MIT License. See the [LICENSE](https://openso
 
 Feel free to clone this repo and adapt this app according to your needs. 
 
----
-
-This version of the README includes an example section with an image to provide a visual reference of how your app looks. Make sure that the `images/example.png` path is correct and that the image exists in your repository.
