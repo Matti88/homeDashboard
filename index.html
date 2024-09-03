@@ -1,7 +1,9 @@
 <html>
+
 <head>
     <meta charset="UTF-8">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" href="https://matti88.github.io/homeDashboard/favicon.ico">
+    <link rel="manifest" href="manifest.json">
     <title>City Dashboard</title>
     <style>
         body {
@@ -29,7 +31,9 @@
             border-radius: 8px;
         }
 
-        #clock, #nextTramTime, #weatherContainer {
+        #clock,
+        #nextTramTime,
+        #weatherContainer {
             font-size: 20px;
             margin-bottom: 20px;
         }
@@ -39,7 +43,8 @@
             border-collapse: collapse;
         }
 
-        th, td {
+        th,
+        td {
             text-align: center;
             border: 1px solid #ddd;
             padding: 8px;
@@ -56,36 +61,49 @@
     <!-- Service Worker Registration -->
     <script>
         if ('serviceWorker' in navigator) {
-          window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/service-worker.js')
-              .then(registration => {
-                console.log('ServiceWorker registration successful with scope: ', registration.scope);
-              })
-              .catch(error => {
-                console.log('ServiceWorker registration failed: ', error);
-              });
-          });
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('ServiceWorker registration failed: ', error);
+                    });
+            });
         }
-      </script>
+    </script>
 </head>
+
 <body>
     <div class="container">
-        <h1>Clock Live</h1>
-        <div id="clock">01:38:56</div>
-        <script src="/clock.js"></script>
+        <h1>Time and Next Departure</h1>
+        <div style="display: flex; flex-direction: row; align-items: center;">
+            <div id="pictureContainer"
+                style="display: flex; flex-direction: column; align-items: flex-start; border-radius: 8px;">
+                <img id="tramImage" src="./images/missedTrain.jpg"
+                    style="max-width: 200px; max-height: 200px; width: auto; height: auto;  border-radius: 8px;" />
+            </div>
+            <div id="textContainer"
+                style="display: flex; flex-direction: column; align-items: flex-start; border-radius: 8px; margin-left: 20px;">
+                <div>TIME: <div id="clock">01:38:56</div>
+                </div>
+                <div>Next departures:
+                    <div id="nextTramTime">05:03, 05:10, 05:17, 05:24</div>
+                    <div id="nextTimeCalc"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="clock.js"></script>
+    <script src="tramSchedule.js"></script>
     </div>
     <div class="container">
-        <h1>Next Tram Departure from Hlawkagasse</h1>
-        <div id="nextTramTime">Next departures: 05:03, 05:10, 05:17, 05:24</div>
-        <script src="/tramSchedule.js"></script>
-    </div>
-    <div class="container">
-        <h1>Weather Forecast</h1>
+        <h1>Vienna Weather Forecast</h1>
         <div id="weatherContainer">
             <!-- Weather Table Here -->
         </div>
-        <script src="/weather.js"></script>
+        <script src="weather.js"></script>
     </div>
-
 </body>
+
 </html>
