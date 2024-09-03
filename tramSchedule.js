@@ -87,7 +87,8 @@ function updateDisplay() {
             imageElement.src = './images/missedTrain.jpg'; //TODO: We are getting this error: Cannot set properties of null (setting 'src') 
         }
 
-        document.getElementById('nextTramTime').textContent = `${nextDepartures.join(', ')}\n  next train in ${timeDifference} minutes`; //TODO: make a newline between the time and the next train
+        document.getElementById('nextTramTime').textContent = `${nextDepartures[0]}`; 
+        document.getElementById('nextTimeCalc').textContent = `next train in ${timeDifference} minutes`;
     } else {
         document.getElementById('nextTramTime').textContent = 'Waiting for data...';
     }
